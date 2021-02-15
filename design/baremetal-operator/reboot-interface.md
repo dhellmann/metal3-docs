@@ -142,17 +142,17 @@ The API has been extended to permit either a hard or a soft reboot to
 take place, specified via the reboot annotation and a `mode` parameter. The API
 supports the following syntax:
 
-- `reboot.metal.io` - immediate reboot via soft shutdown first, followed by
+- `reboot.metal.io` -- immediate reboot via soft shutdown first, followed by
 a hard shutdown if the soft shutdown fails.
 
-- `reboot.metal3.io: {'mode':'hard'}` - immediate reboot via hard shutdown,
+- `reboot.metal3.io: {'mode':'hard'}` -- immediate reboot via hard shutdown,
 potentially allowing for high-availability use-cases.
 
-- `reboot.metal3.io/key` - phased reboot, issued and managed by the client
+- `reboot.metal3.io/{key}` -- phased reboot, issued and managed by the client
 registered with the `key`, via soft shutdown first, followed by a hard reboot if
 the soft reboot fails.
 
-- `reboot.metal3.io:/key {'mode':'hard'}` - phased reboot, issued and
+- `reboot.metal3.io:/{key} {'mode':'hard'}` -- phased reboot, issued and
 managed by the client registered with the `key`, via hard shutdown.
 
 Currently, if any mode is specified other than `{'mode':'hard'}`, the default behaviour
